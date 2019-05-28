@@ -92,6 +92,10 @@ def just_the_right_size
   # BETWEEN allows range checking - note that it is inclusive.
   execute(<<-SQL)
     SELECT
-      
+      name, area/1000 AS area_square_kilometers
+    FROM
+      countries
+    WHERE
+      200000 < area AND 250000 > area
   SQL
 end
