@@ -86,6 +86,12 @@ def presidential_prizes
   # Show all details of the presidential winners: ('Theodore Roosevelt',
   # 'Woodrow Wilson', 'Jimmy Carter')
   execute(<<-SQL)
+    SELECT
+      *
+    FROM
+      nobels
+    WHERE
+      winner = 'Theodore Roosevelt' OR winner = 'Woodrow Wilson' OR winner = 'Jimmy Carter'
   SQL
 end
 
