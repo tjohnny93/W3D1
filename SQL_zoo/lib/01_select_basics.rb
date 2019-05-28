@@ -70,14 +70,19 @@ def scandinavia
     FROM
       countries
     WHERE
-      countries
-    LIKE 'Denmark' 
+      NAME = 'Denmark' OR NAME = 'Finland' OR NAME = 'Norway' OR NAME = 'Sweden'
   SQL
 end
 
 def starts_with_g
   # Show each country that begins with the letter G
   execute(<<-SQL)
+    SELECT
+      name
+    FROM
+      countries
+    WHERE
+      name LIKE 'G%'
   SQL
 end
 
@@ -86,5 +91,7 @@ def just_the_right_size
   # with an area between 200,000 and 250,000.
   # BETWEEN allows range checking - note that it is inclusive.
   execute(<<-SQL)
+    SELECT
+      
   SQL
 end
