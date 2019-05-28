@@ -64,6 +64,12 @@ end
 def name_and_population
   # Show the name and population for 'France', 'Germany', and 'Italy'
   execute(<<-SQL)
+    SELECT
+      name, population
+    FROM
+      countries
+    WHERE
+      NAME = 'France' OR NAME = 'Germany' OR NAME = 'Italy'
   SQL
 end
 
